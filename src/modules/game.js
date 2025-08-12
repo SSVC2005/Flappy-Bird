@@ -186,6 +186,8 @@ export class Game {
     if (modeCfg.powerups?.disabled) {
       this.powerMgr.spawnIntervalMin = Infinity;
       this.powerMgr.spawnIntervalMax = Infinity;
+  this.powerMgr.items = [];
+  this.powerMgr.nextScoreTrigger = Infinity;
     } else if (modeCfg.powerups) {
       this.powerMgr.spawnIntervalMin = modeCfg.powerups.spawnIntervalMin;
       this.powerMgr.spawnIntervalMax = modeCfg.powerups.spawnIntervalMax;

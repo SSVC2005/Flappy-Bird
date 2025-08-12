@@ -17,6 +17,10 @@ export class PowerupManager {
   }
 
   schedule(currentScore) {
+    if (this.spawnIntervalMin === Infinity || this.spawnIntervalMax === Infinity) {
+      this.nextScoreTrigger = Infinity;
+      return;
+    }
     this.nextScoreTrigger = currentScore + Math.floor(rand(this.spawnIntervalMin, this.spawnIntervalMax + 1));
   }
 
@@ -43,6 +47,7 @@ export class PowerupManager {
   }
 
   trySpawn(currentScore, width, buildPairMap) {
+  if (this.spawnIntervalMin === Infinity || this.spawnIntervalMax === Infinity) return; // disabled
     if (currentScore < this.cooldownUntilScore) return;
     if (currentScore < this.nextScoreTrigger) return;
     const pairMap = buildPairMap();
