@@ -1,0 +1,21 @@
+/* Layout */
+:root { --bg: #38bdf8; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Cantarell, Ubuntu, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1200px 600px at 20% 0%, #a5d8ff 0%, #7dd3fc 35%, #38bdf8 100%); }
+#app { height: 100%; width: 100%; display: grid; place-items: center; padding: 8px; }
+canvas { display: block; background: transparent; border-radius: 16px; box-shadow: 0 30px 80px rgba(2, 6, 23, .35), 0 2px 8px rgba(2, 6, 23, .2); }
+@media (max-width: 420px) { canvas { box-shadow: none; border-radius: 12px; } }
+
+/* Difficulty menu overlay */
+.menu-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; backdrop-filter: blur(6px); background: rgba(15,23,42,0.55); border-radius: 16px; }
+.menu-overlay.hidden { display: none; }
+.menu-overlay h1 { margin: 0 0 4px; font-size: 42px; color: #fff; text-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+.menu-overlay p { margin: 0 0 8px; color: #e2e8f0; font-weight: 500; }
+.mode-buttons { display: flex; gap: 16px; }
+.mode-buttons button { cursor: pointer; font: 600 16px system-ui; padding: 14px 26px; border-radius: 14px; border: 0; color: #fff; background: linear-gradient(135deg,#0891b2,#0ea5e9); box-shadow: 0 4px 12px rgba(0,0,0,0.35); transition: transform .15s, box-shadow .15s; }
+.mode-buttons button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.45); }
+.mode-buttons button:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,0.35); }
+.mode-buttons button.secondary { background: linear-gradient(135deg,#334155,#475569); }
+.mode-buttons button.danger { background: linear-gradient(135deg,#7f1d1d,#dc2626); }
+.small-note { font: 500 12px system-ui; color: #cbd5e1; }

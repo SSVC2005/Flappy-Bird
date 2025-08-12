@@ -1,0 +1,16 @@
+{
+  "$schema": "vscode://schemas/tasks",
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": ["$tsc"],
+      "options": { "cwd": "${workspaceFolder}" }
+    }
+  ]
+}
